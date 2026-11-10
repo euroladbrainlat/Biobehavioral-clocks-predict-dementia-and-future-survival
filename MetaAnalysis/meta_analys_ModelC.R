@@ -12,7 +12,7 @@ datos <- read.csv("Data/Model-C-meta-table.csv")
 
 meta_result_cog <- metagen(TE = logHR, seTE = SE, studlab = country, data = datos, sm = "HR", method.tau = "REML")
 
-pdf("Figures/forest_plot_metagen_ModelC.pdf", width = 20, height = 25)
+pdf("../Figures/forest_plot_metagen_ModelC.pdf", width = 20, height = 25)
 
 forest(meta_result_cog,
   colgap = unit(20, "mm"), # Adjust space between columns
@@ -78,7 +78,7 @@ data_to_save <- rbind(
 write_xlsx(data_to_save, "Data/forest_plot_metagen_ModelC.xlsx")
 
 
-pdf("Figures/funnel_plot_ModelC.pdf", width = 6, height = 6)
+pdf("../Figures/funnel_plot_ModelC.pdf", width = 6, height = 6)
 
 funnel(
   meta_result_cog,
